@@ -15,21 +15,13 @@
         }
         static void Spostamenti(List<int> numeri, int s)
         {
-            int somma;
-            for(int i = 0;  i < numeri.Count; i++)
+            int n = 0;
+            for (int i = 0;  i < s; i++)
             {
-                somma = 0;
-                somma = i + s;
-                if(somma >= numeri.Count)
-                {
-                    somma = somma - numeri.Count;
-                    numeri[i] = numeri[somma];
-                }
-                else
-                {
-                    numeri[i] = numeri[somma];
-                }
-                
+                n = numeri[numeri.Count - 1];
+                numeri.RemoveAt(numeri.Count-1);
+                numeri.Insert(0, n);
+                n = 0;
             }
             foreach(int i in numeri)
             {
