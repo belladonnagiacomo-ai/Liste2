@@ -42,6 +42,8 @@
             int s = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
             Spostamenti(numeri, s);
+
+            List<int> Ripetuti = new List<int>() { 4, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9 };
         }
     }
 }
