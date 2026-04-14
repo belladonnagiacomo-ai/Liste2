@@ -13,7 +13,7 @@
             }
             return lista1;
         }
-        static void Spostamenti(List<int> numeri, int s)
+        static List<int> Spostamenti(List<int> numeri, int s)
         {
             int n = 0;
             for (int i = 0;  i < s; i++)
@@ -23,10 +23,8 @@
                 numeri.Insert(0, n);
                 n = 0;
             }
-            foreach(int i in numeri)
-            {
-                Console.WriteLine(i);
-            }
+            return numeri;
+            
         }
         static void Main(string[] args)
         {
@@ -41,7 +39,11 @@
             Console.WriteLine("Dammi il numero di spostamenti");
             int s = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
-            Spostamenti(numeri, s);
+            foreach(int i in Spostamenti(numeri, s))
+            {
+                Console.Write("[" + i + "]");
+
+            }
 
             List<int> Ripetuti = new List<int>() { 4, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9 };
         }
